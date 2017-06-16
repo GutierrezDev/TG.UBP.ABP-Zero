@@ -13,7 +13,7 @@ namespace TG.UBP.Web
 {
     [DependsOn(
         typeof(AbpWebMvcModule),
-        typeof(UBPDataModule), 
+        typeof(UbpEFModule), 
         typeof(UBPApplicationModule), 
         typeof(UBPWebApiModule))]
     public class UBPWebModule : AbpModule

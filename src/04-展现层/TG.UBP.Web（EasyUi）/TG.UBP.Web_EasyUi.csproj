@@ -1201,21 +1201,25 @@
       <Project>{be9aca26-9c1b-4975-9aad-bdd48de84eb8}</Project>
       <Name>Abp</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\01-基础设施层\TG.UBP.Common\TG.UBP.Common.csproj">
+    <ProjectReference Include="..\..\01-基础设施层\TG.UBP.Common\TG.Common.csproj">
       <Project>{d3c43dfa-4bc8-4daa-83a4-51d0000e788c}</Project>
-      <Name>TG.UBP.Common</Name>
+      <Name>TG.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\01-基础设施层\TG.UBP.Core\TG.UBP.Core.csproj">
+      <Project>{4fe341bf-8422-4df3-8efa-dd5187032f70}</Project>
+      <Name>TG.UBP.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\03-应用层\TG.UBP.Application\TG.UBP.Application.csproj">
       <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
       <Name>TG.UBP.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\02-领域层\TG.UBP.Core\TG.UBP.Core.csproj">
+    <ProjectReference Include="..\..\02-领域层\TG.UBP.Core\TG.UBP.Domain.csproj">
       <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
-      <Name>TG.UBP.Core</Name>
+      <Name>TG.UBP.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\01-基础设施层\TG.UBP.EF\TG.UBP.EF.csproj">
       <Project>{3979f157-deb0-4878-ab1d-4cef6b5a1300}</Project>
-      <Name>TG.UBP.EntityFramework</Name>
+      <Name>TG.UBP.EF</Name>
     </ProjectReference>
     <ProjectReference Include="..\TG.UBP.Web.Utility\TG.UBP.Web.Utility.csproj">
       <Project>{8f24a72e-4d3d-4857-9c49-ab68f94c5a6c}</Project>

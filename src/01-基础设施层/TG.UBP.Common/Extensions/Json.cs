@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TG.UBP.Common.Extensions
+namespace TG.Common.Extensions
 {
     /// <summary>
     /// Json操作的扩展

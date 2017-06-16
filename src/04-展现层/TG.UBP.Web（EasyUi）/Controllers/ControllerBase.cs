@@ -1,7 +1,7 @@
 ﻿using Abp.Web.Mvc.Controllers;
 using System.Web.Mvc;
-using TG.UBP.Common;
-using TG.UBP.Common.Extensions;
+using TG.UBP.Core;
+using TG.Common.Extensions;
 
 namespace TG.UBP.Web.Controllers
 {
