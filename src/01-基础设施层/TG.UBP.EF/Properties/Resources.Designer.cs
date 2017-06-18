@@ -61,6 +61,15 @@ namespace TG.UBP.EF.Properties {
         }
         
         /// <summary>
+        ///   查找类似 没有找到指定的“{0}”配置文件，请确认是否存在 的本地化字符串。
+        /// </summary>
+        internal static string DatabaseInitializer_ConfigNotFind {
+            get {
+                return ResourceManager.GetString("DatabaseInitializer_ConfigNotFind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 类型“{0}”不是有效的上下文初始化类型 的本地化字符串。
         /// </summary>
         internal static string DatabaseInitializer_TypeNotDatabaseInitializer {

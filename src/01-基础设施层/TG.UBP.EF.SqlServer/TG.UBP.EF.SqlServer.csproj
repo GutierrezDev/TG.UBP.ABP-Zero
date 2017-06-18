@@ -57,6 +57,10 @@
       <Project>{325015f8-fb13-402e-99b5-f5b8ff462c17}</Project>
       <Name>Abp.EntityFramework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\..\module-zero\src\Abp.Zero.EntityFramework\Abp.Zero.EntityFramework.csproj">
+      <Project>{e35a1703-64c2-4c81-82e5-4da2c79b4b5c}</Project>
+      <Name>Abp.Zero.EntityFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\02-领域层\TG.UBP.Domain.SeedAction\TG.UBP.Domain.SeedAction.csproj">
       <Project>{cba073dd-12e0-4ffa-b910-38b4824b5b59}</Project>
       <Name>TG.UBP.Domain.SeedAction</Name>

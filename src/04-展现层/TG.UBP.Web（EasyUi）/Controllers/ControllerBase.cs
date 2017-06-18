@@ -1,7 +1,8 @@
 ﻿using Abp.Web.Mvc.Controllers;
 using System.Web.Mvc;
-using TG.UBP.Core;
 using TG.Common.Extensions;
+using TG.UBP.Core;
+using TG.UBP.Domain.Core;
 
 namespace TG.UBP.Web.Controllers
 {
@@ -12,7 +13,7 @@ namespace TG.UBP.Web.Controllers
     {
         protected ControllerBase()
         {
-            LocalizationSourceName = UBPConsts.LocalizationSourceName;
+            LocalizationSourceName = UbpConsts.LocalizationSourceName;
         }
 
         protected virtual ActionResult ToJsonResult(object data)

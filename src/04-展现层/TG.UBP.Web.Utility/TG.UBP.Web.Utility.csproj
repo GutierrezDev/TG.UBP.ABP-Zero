@@ -49,6 +49,10 @@
       <Project>{d3c43dfa-4bc8-4daa-83a4-51d0000e788c}</Project>
       <Name>TG.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\01-基础设施层\TG.UBP.Core\TG.UBP.Core.csproj">
+      <Project>{4fe341bf-8422-4df3-8efa-dd5187032f70}</Project>
+      <Name>TG.UBP.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

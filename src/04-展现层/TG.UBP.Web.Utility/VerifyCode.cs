@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using TG.UBP.Common.Security;
+using TG.UBP.Core.Security;
 
 namespace TG.UBP.Web.Utility
 {

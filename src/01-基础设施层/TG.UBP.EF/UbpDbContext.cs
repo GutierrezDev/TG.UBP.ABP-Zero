@@ -3,14 +3,18 @@ using System.Linq;
 using Abp.EntityFramework;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using Abp.Zero.EntityFramework;
+
+using TG.UBP.Domain.Entity.BaseManage.Permission;
+using TG.UBP.Domain.Entity.BaseManage.MultiTenancy;
 
 namespace TG.UBP.EF
 {
-    public class UbpDbContext : AbpDbContext
+    public class UbpDbContext : AbpZeroDbContext<Tenant, Role, User>
     {
         //TODO: Define an IDbSet for each Entity...
-        public DbSet<TG.UBP.Domain.Entity.Module> Modules { get; set; }
-        public DbSet<TG.UBP.Domain.Entity.User> Users { get; set; }
+        //public DbSet<TG.UBP.Domain.Entity.Module> Modules { get; set; }
+        //public DbSet<TG.UBP.Domain.Entity.User> Users { get; set; }
 
         //Example:
         //public virtual IDbSet<User> Users { get; set; }

@@ -1,4 +1,5 @@
 ﻿using Abp.Web.Mvc.Views;
+using TG.UBP.Domain.Core;
 
 namespace TG.UBP.Web.Views
 {
@@ -11,7 +12,7 @@ namespace TG.UBP.Web.Views
     {
         protected UBPWebViewPageBase()
         {
-            LocalizationSourceName = UBPConsts.LocalizationSourceName;
+            LocalizationSourceName = UbpConsts.LocalizationSourceName;
         }
     }
 }

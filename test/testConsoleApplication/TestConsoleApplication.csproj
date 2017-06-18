@@ -97,10 +97,6 @@
       <Project>{4fe341bf-8422-4df3-8efa-dd5187032f70}</Project>
       <Name>TG.UBP.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\01-基础设施层\TG.UBP.EF.Oracle\TG.UBP.EF.OracleDevart.csproj">
-      <Project>{034bc5c8-35b6-412e-9440-431b3997b2ab}</Project>
-      <Name>TG.UBP.EF.OracleDevart</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\01-基础设施层\TG.UBP.EF.SqlServer\TG.UBP.EF.SqlServer.csproj">
       <Project>{2d5f00c2-a81f-46b9-aa79-7023b0188761}</Project>
       <Name>TG.UBP.EF.SqlServer</Name>

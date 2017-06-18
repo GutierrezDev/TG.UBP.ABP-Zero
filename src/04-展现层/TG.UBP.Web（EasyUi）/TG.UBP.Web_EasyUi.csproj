@@ -65,12 +65,15 @@
       <HintPath>..\..\..\packages\Castle.Windsor.3.4.0\lib\net45\Castle.Windsor.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Devart.Data, Version=5.0.1611.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.Oracle, Version=9.2.187.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.Oracle.Entity.EF6, Version=9.2.187.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.DynamicFilters, Version=2.6.0.0, Culture=neutral, PublicKeyToken=146423a1b8d60775, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EntityFramework.DynamicFilters.2.6.0\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+    <Reference Include="EntityFramework.DynamicFilters, Version=2.7.0.0, Culture=neutral, PublicKeyToken=146423a1b8d60775, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.DynamicFilters.2.7.0\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -691,14 +694,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="js\main.js" />
-    <Content Include="Localization\UBP\UBP-zh-CN.xml" />
-    <Content Include="Localization\UBP\UBP.ja.xml" />
-    <Content Include="Localization\UBP\UBP.tr.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Localization\UBP\UBP.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="css\main.less" />
     <Content Include="css\main.css.map">
       <DependentUpon>main.css</DependentUpon>
@@ -1129,8 +1124,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\UBPNavigationProvider.cs" />
-    <Compile Include="App_Start\UBPWebModule.cs" />
+    <Compile Include="App_Start\UbpNavigationProvider.cs" />
+    <Compile Include="App_Start\UbpWebModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1165,6 +1160,9 @@
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Desktop.cshtml" />
+    <Content Include="ubp.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1193,6 +1191,10 @@
       <Project>{53c6938f-d370-40f0-8870-182b40cc06e8}</Project>
       <Name>Abp.Web.Mvc</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\..\aspnetboilerplate\src\Abp.Web.SignalR\Abp.Web.SignalR.csproj">
+      <Project>{60aa0965-cc14-4779-88ee-e13d6078d40c}</Project>
+      <Name>Abp.Web.SignalR</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\aspnetboilerplate\src\Abp.Web\Abp.Web.csproj">
       <Project>{f443cab0-11b3-4fb5-9782-f8779aae34f7}</Project>
       <Name>Abp.Web</Name>
@@ -1200,6 +1202,10 @@
     <ProjectReference Include="..\..\..\..\aspnetboilerplate\src\Abp\Abp.csproj">
       <Project>{be9aca26-9c1b-4975-9aad-bdd48de84eb8}</Project>
       <Name>Abp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\module-zero\src\Abp.Zero.Common\Abp.Zero.Common.csproj">
+      <Project>{362af84e-4d6b-4a8b-a111-91620c1f1e50}</Project>
+      <Name>Abp.Zero.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\01-基础设施层\TG.UBP.Common\TG.Common.csproj">
       <Project>{d3c43dfa-4bc8-4daa-83a4-51d0000e788c}</Project>
@@ -1209,17 +1215,29 @@
       <Project>{4fe341bf-8422-4df3-8efa-dd5187032f70}</Project>
       <Name>TG.UBP.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\03-应用层\TG.UBP.Application\TG.UBP.Application.csproj">
-      <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
-      <Name>TG.UBP.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\02-领域层\TG.UBP.Core\TG.UBP.Domain.csproj">
-      <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
-      <Name>TG.UBP.Domain</Name>
+    <ProjectReference Include="..\..\01-基础设施层\TG.UBP.EF.OracleDevart\TG.UBP.EF.OracleDevart.csproj">
+      <Project>{034bc5c8-35b6-412e-9440-431b3997b2ab}</Project>
+      <Name>TG.UBP.EF.OracleDevart</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\01-基础设施层\TG.UBP.EF\TG.UBP.EF.csproj">
       <Project>{3979f157-deb0-4878-ab1d-4cef6b5a1300}</Project>
       <Name>TG.UBP.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\02-领域层\TG.UBP.Domain.Core\TG.UBP.Domain.Core.csproj">
+      <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
+      <Name>TG.UBP.Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\02-领域层\TG.UBP.Domain.EntityConfiguration.OracleDevart\TG.UBP.Domain.EntityConfiguration.OracleDevart.csproj">
+      <Project>{e4ce48f2-d1df-4d9d-b419-8adcf3be5866}</Project>
+      <Name>TG.UBP.Domain.EntityConfiguration.OracleDevart</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\03-应用层\TG.UBP.Application.Dto\TG.UBP.Application.Dto.csproj">
+      <Project>{0e684037-fae4-4f67-9c4c-b68dbb215d8d}</Project>
+      <Name>TG.UBP.Application.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\03-应用层\TG.UBP.Application.Service\TG.UBP.Application.Service.csproj">
+      <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
+      <Name>TG.UBP.Application.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\TG.UBP.Web.Utility\TG.UBP.Web.Utility.csproj">
       <Project>{8f24a72e-4d3d-4857-9c49-ab68f94c5a6c}</Project>

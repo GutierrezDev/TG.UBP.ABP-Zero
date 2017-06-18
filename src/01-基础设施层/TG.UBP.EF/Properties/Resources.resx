@@ -123,4 +123,7 @@
   <data name="DBInitializerBase_MapperAssembliesIsEmpty" xml:space="preserve">
     <value>数据库“{0}”初始化失败，实体映射程序集不存在</value>
   </data>
+  <data name="DatabaseInitializer_ConfigNotFind" xml:space="preserve">
+    <value>没有找到指定的“{0}”配置文件，请确认是否存在</value>
+  </data>
 </root>

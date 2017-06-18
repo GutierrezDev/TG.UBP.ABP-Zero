@@ -3,10 +3,11 @@ using Abp.Application.Services;
 using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.WebApi;
+using TG.UBP.Application.Service;
 
 namespace TG.UBP
 {
-    [DependsOn(typeof(AbpWebApiModule), typeof(UBPApplicationModule))]
+    [DependsOn(typeof(AbpWebApiModule), typeof(UbpApplicationServiceModule))]
     public class UBPWebApiModule : AbpModule
     {
         public override void Initialize()
@@ -14,7 +15,7 @@ namespace TG.UBP
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
             Configuration.Modules.AbpWebApi().DynamicApiControllerBuilder
-                .ForAll<IApplicationService>(typeof(UBPApplicationModule).Assembly, "app")
+                .ForAll<IApplicationService>(typeof(UbpApplicationServiceModule).Assembly, "app")
                 .Build();
         }
     }

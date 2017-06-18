@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
+﻿using System.Threading.Tasks;
 using System.Web.Mvc;
-using TG.UBP.Common;
-using TG.UBP.Common.Security;
+using TG.UBP.Core;
+using TG.UBP.Core.Security;
 using TG.UBP.Web.Models;
 using TG.UBP.Web.Utility;
 

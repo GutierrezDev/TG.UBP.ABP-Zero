@@ -5,7 +5,7 @@ using Castle.Facilities.Logging;
 
 namespace TG.UBP.Web
 {
-    public class MvcApplication : AbpWebApplication<UBPWebModule>
+    public class MvcApplication : AbpWebApplication<UbpWebModule>
     {
         protected override void Application_Start(object sender, EventArgs e)
         {

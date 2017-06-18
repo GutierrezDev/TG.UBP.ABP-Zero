@@ -3,10 +3,11 @@ using Abp.Modules;
 using System.Reflection;
 using TG.UBP.Core;
 using TG.UBP.Core.Config;
+using TG.UBP.Domain.Core;
 
 namespace TG.UBP.EF
 {
-    [DependsOn(typeof(AbpEntityFrameworkModule), typeof(UbpCoreModule))]
+    [DependsOn(typeof(AbpEntityFrameworkModule), typeof(UbpCoreModule), typeof(UbpDomainCoreModule))]
     public class UbpEFModule : AbpModule
     {
         private static bool _databaseInitialized;

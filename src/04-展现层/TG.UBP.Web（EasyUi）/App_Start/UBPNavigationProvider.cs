@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Navigation;
 using Abp.Localization;
+using TG.UBP.Domain.Core;
 
 namespace TG.UBP.Web
 {
@@ -9,7 +10,7 @@ namespace TG.UBP.Web
     /// When you add menu items here, they are automatically appear in angular application.
     /// See Views/Layout/_TopMenu.cshtml file to know how to render menu.
     /// </summary>
-    public class UBPNavigationProvider : NavigationProvider
+    public class UbpNavigationProvider : NavigationProvider
     {
         public override void SetNavigation(INavigationProviderContext context)
         {
@@ -17,14 +18,14 @@ namespace TG.UBP.Web
                 .AddItem(
                     new MenuItemDefinition(
                         "Home",
-                        new LocalizableString("HomePage", UBPConsts.LocalizationSourceName),
+                        new LocalizableString("HomePage", UbpConsts.LocalizationSourceName),
                         url: "",
                         icon: "fa fa-home"
                         )
                 ).AddItem(
                     new MenuItemDefinition(
                         "About",
-                        new LocalizableString("About", UBPConsts.LocalizationSourceName),
+                        new LocalizableString("About", UbpConsts.LocalizationSourceName),
                         url: "About",
                         icon: "fa fa-info"
                         )

@@ -1,43 +1,37 @@
-﻿using System.Reflection;
-using System.Web;
+﻿using Abp.Modules;
+using Abp.Web.Mvc;
+using Abp.Web.SignalR;
+using Abp.Zero.Configuration;
+using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Abp.Localization;
-using Abp.Localization.Dictionaries;
-using Abp.Localization.Dictionaries.Xml;
-using Abp.Modules;
-using Abp.Web.Mvc;
+using TG.UBP.Application.Service;
+using TG.UBP.EF;
 
 namespace TG.UBP.Web
 {
     [DependsOn(
         typeof(AbpWebMvcModule),
         typeof(UbpEFModule), 
-        typeof(UBPApplicationModule), 
+        typeof(UbpApplicationServiceModule),
+        typeof(AbpWebSignalRModule),
         typeof(UBPWebApiModule))]
-    public class UBPWebModule : AbpModule
+    public class UbpWebModule : AbpModule
     {
         public override void PreInitialize()
         {
-            //Add/remove languages for your application
-            Configuration.Localization.Languages.Add(new LanguageInfo("en", "English", "famfamfam-flag-england", true));
-            Configuration.Localization.Languages.Add(new LanguageInfo("tr", "Türkçe", "famfamfam-flag-tr"));
-            Configuration.Localization.Languages.Add(new LanguageInfo("zh-CN", "简体中文", "famfamfam-flag-cn"));
-            Configuration.Localization.Languages.Add(new LanguageInfo("ja", "日本語", "famfamfam-flag-jp"));
-
-            //Add/remove localization sources here
-            Configuration.Localization.Sources.Add(
-                new DictionaryBasedLocalizationSource(
-                    UBPConsts.LocalizationSourceName,
-                    new XmlFileLocalizationDictionaryProvider(
-                        HttpContext.Current.Server.MapPath("~/Localization/UBP")
-                        )
-                    )
-                );
+            //Enable database based localization
+            Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
 
             //Configure navigation/menu
-            Configuration.Navigation.Providers.Add<UBPNavigationProvider>();
+            Configuration.Navigation.Providers.Add<UbpNavigationProvider>();
+
+            //Configure Hangfire - ENABLE TO USE HANGFIRE INSTEAD OF DEFAULT JOB MANAGER
+            //Configuration.BackgroundJobs.UseHangfire(configuration =>
+            //{
+            //    configuration.GlobalConfiguration.UseSqlServerStorage("Default");
+            //});
         }
 
         public override void Initialize()

@@ -21,10 +21,14 @@
 	领域服务
 	工作单元
 	......
-2、按模块+功能建立子目录，例如：BaseManage（基础管理）\User（用户管理）；
+2、按模块+功能建立子目录，例如：BaseManage（基础管理）\Permission（权限管理）；
 3、在子目录下创建相应的实体；
-4、需要为每种数据库创建不同的实体映射类，且必须为单独项目——TG.UBP.Core.EntityConfiguration.XXX项目
+4、需要为每种数据库创建不同的实体映射类，且必须为单独项目——TG.UBP.Domain.EntityConfiguration.XXX项目
 5、在子目录下创建相应的领域服务类，在其中使用UOW开启事物、修改数据库、提交事物；
-6、由于OSharp框架采用的是泛型仓储，所以一般不需要为每个实体创建单独的仓储；
-7、工作单元是从属于泛型仓储的，也不需要单独创建；
+6、工作单元是从属于泛型仓储的，也不需要单独创建；
 
+
+按模块+功能建立子目录
+	BaseManage（基础管理）\Permission：权限管理，包括Module、User、Role、Tenant
+						  \Identity：身份管理，包括组织、部门、岗位、职务、员工
+						  \OAuth
