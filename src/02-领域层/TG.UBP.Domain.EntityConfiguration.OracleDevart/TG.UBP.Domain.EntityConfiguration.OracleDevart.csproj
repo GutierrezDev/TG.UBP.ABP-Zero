@@ -47,8 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseManage\Permission\UserConfiguration_OracleDevart.cs" />
-    <Compile Include="BaseManage\Permission\ModuleConfiguration_OracleDevart.cs" />
+    <Compile Include="BaseManage\BackgroundJob\BackgroundJobConfiguration.cs" />
+    <Compile Include="BaseManage\Localization\ApplicationLanguageTextConfiguration.cs" />
+    <Compile Include="BaseManage\Notification\NotificationConfiguration.cs" />
+    <Compile Include="BaseManage\Notification\NotificationSubscriptionConfiguration.cs" />
+    <Compile Include="BaseManage\Notification\TenantNotification.cs" />
+    <Compile Include="BaseManage\Permission\UserConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

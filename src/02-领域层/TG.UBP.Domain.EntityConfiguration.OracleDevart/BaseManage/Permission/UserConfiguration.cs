@@ -9,7 +9,7 @@ using TG.UBP.EF;
 
 namespace TG.UBP.Domain.EntityConfiguration.OracleDevart
 {
-    public class UserConfiguration_OracleDevart : EntityConfigurationBase<User, long>
+    public class UserConfiguration : EntityConfigurationBase<User, long>
     {
     }
 }

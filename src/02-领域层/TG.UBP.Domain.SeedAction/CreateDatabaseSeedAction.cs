@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Abp.Application.Editions;
+using System;
 using System.Data.Entity;
+using System.Linq;
+using TG.UBP.Domain.Core.BaseManage.Editions;
+using TG.UBP.Domain.SeedAction.SeedData;
 using TG.UBP.EF.Migrations;
 
 namespace TG.UBP.Domain.SeedAction
@@ -31,6 +35,14 @@ namespace TG.UBP.Domain.SeedAction
             //    TwoFactorEnabled = false,
             //    LockoutEnabled = true
             //});
+
+
+            //Host seed
+            new InitialHostDbBuilder(context).Create();
+
+            //Default tenant seed (in host database).
+            new DefaultTenantCreator(context).Create();
+            new TenantRoleAndUserBuilder(context, 1).Create();
         }
 
         #endregion
