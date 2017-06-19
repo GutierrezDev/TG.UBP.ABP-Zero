@@ -23,12 +23,14 @@ namespace TG.UBP.Web
                 "{lang}/{controller}/{action}/{id}", // 带有参数的 URL
                 new { lang = "zh", controller = "Home", action = "Index", id = UrlParameter.Optional }, // 参数默认值
                 new { lang = "^[a-zA-Z]{2}-[a-zA-Z]{2}?$" }    //参数约束
-            );
+                 , namespaces: new string[] { "TG.UBP.Web.Controllers" }
+           );
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                , namespaces : new string[] { "TG.UBP.Web.Controllers" }
             );
         }
     }

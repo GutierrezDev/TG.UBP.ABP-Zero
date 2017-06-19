@@ -1127,17 +1127,9 @@
     <Compile Include="App_Start\UbpNavigationProvider.cs" />
     <Compile Include="App_Start\UbpWebModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Models\AccountModel.cs" />
-    <Compile Include="Models\Layout\LanguageSelectionViewModel.cs" />
-    <Compile Include="Controllers\LayoutController.cs" />
-    <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Layout\TopMenuViewModel.cs" />
-    <Compile Include="Models\SysModuleNavModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\UBPWebViewPageBase.cs" />
     <Compile Include="Views\UrlChecker.cs" />
@@ -1238,6 +1230,10 @@
     <ProjectReference Include="..\..\03-应用层\TG.UBP.Application.Service\TG.UBP.Application.Service.csproj">
       <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
       <Name>TG.UBP.Application.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TG.UBP.Web.Controllers\TG.UBP.Web.Controllers.csproj">
+      <Project>{d5d4632a-6f2a-4cec-9137-83841a2b6797}</Project>
+      <Name>TG.UBP.Web.Controllers</Name>
     </ProjectReference>
     <ProjectReference Include="..\TG.UBP.Web.Utility\TG.UBP.Web.Utility.csproj">
       <Project>{8f24a72e-4d3d-4857-9c49-ab68f94c5a6c}</Project>

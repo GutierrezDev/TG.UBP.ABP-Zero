@@ -8,15 +8,17 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using TG.UBP.Application.Service;
 using TG.UBP.EF;
+using TG.UBP.Web.Controllers;
 
 namespace TG.UBP.Web
 {
-    [DependsOn(
-        typeof(AbpWebMvcModule),
-        typeof(UbpEFModule), 
-        typeof(UbpApplicationServiceModule),
-        typeof(AbpWebSignalRModule),
-        typeof(UBPWebApiModule))]
+    //[DependsOn(
+    //    typeof(AbpWebMvcModule),
+    //    typeof(UbpEFModule), 
+    //    typeof(UbpApplicationServiceModule),
+    //    typeof(AbpWebSignalRModule),
+    //    typeof(UBPWebApiModule))]
+    [DependsOn(typeof(UbpWebControllerModule))]
     public class UbpWebModule : AbpModule
     {
         public override void PreInitialize()
