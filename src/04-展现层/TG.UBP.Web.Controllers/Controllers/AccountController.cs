@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using Abp.Localization;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using TG.UBP.Core;
 using TG.UBP.Core.Security;
@@ -7,10 +8,30 @@ using TG.UBP.Web.Utility;
 
 namespace TG.UBP.Web.Controllers
 {
-    public class AccountController : ControllerBase
+    public class AccountController : UbpControllerBase
     {
+        private readonly ILanguageManager _languageManager;
+
+        public AccountController(
+            ILanguageManager languageManager)
+        {
+            _languageManager = languageManager;
+        }
+
         // GET: Account
         public ActionResult Index()
+        {
+            //系统名称
+            ViewBag.WebName = "三行统一业务平台";
+            //公司名称
+            ViewBag.ComName = "南昌三行";
+            //CopyRight
+            ViewBag.CopyRight = "2013-2017";
+
+            return View();
+        }
+
+        public ActionResult Login()
         {
             //系统名称
             ViewBag.WebName = "三行统一业务平台";

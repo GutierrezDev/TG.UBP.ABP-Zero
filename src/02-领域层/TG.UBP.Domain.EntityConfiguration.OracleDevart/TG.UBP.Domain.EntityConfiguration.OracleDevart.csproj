@@ -52,6 +52,9 @@
     <Compile Include="BaseManage\Notification\NotificationConfiguration.cs" />
     <Compile Include="BaseManage\Notification\NotificationSubscriptionConfiguration.cs" />
     <Compile Include="BaseManage\Notification\TenantNotification.cs" />
+    <Compile Include="BaseManage\Permission\ModuleColumnFilterConfiguration.cs" />
+    <Compile Include="BaseManage\Permission\ModuleConfiguration.cs" />
+    <Compile Include="BaseManage\Permission\ModuleOperateConfiguration.cs" />
     <Compile Include="BaseManage\Permission\UserConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

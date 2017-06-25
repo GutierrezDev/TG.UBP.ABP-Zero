@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -43,6 +46,11 @@
   <ItemGroup>
     <Compile Include="BaseManage\MultiTenancy\CreateTenantInput.cs" />
     <Compile Include="BaseManage\MultiTenancy\TenantListDto.cs" />
+    <Compile Include="BaseManage\Permission\Modules\CreateModuleInput.cs" />
+    <Compile Include="BaseManage\Permission\Modules\ModuleListDto.cs" />
+    <Compile Include="BaseManage\Permission\Modules\ModuleColumnFilterDto.cs" />
+    <Compile Include="BaseManage\Permission\Modules\ModuleOperateDto.cs" />
+    <Compile Include="BaseManage\Permission\OperatePermDto.cs" />
     <Compile Include="BaseManage\Permission\Roles\UpdateRolePermissionsInput.cs" />
     <Compile Include="BaseManage\Permission\Users\CreateUserInput.cs" />
     <Compile Include="BaseManage\Permission\Users\ProhibitPermissionInput.cs" />
@@ -51,6 +59,7 @@
     <Compile Include="BaseManage\Sessions\TenantLoginInfoDto.cs" />
     <Compile Include="BaseManage\Sessions\UserLoginInfoDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UbpApplicationDtoModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\aspnetboilerplate\src\Abp.AutoMapper\Abp.AutoMapper.csproj">
@@ -73,6 +82,9 @@
       <Project>{d0f6b7da-08a0-472b-ad15-3f9878439467}</Project>
       <Name>TG.UBP.Domain.Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

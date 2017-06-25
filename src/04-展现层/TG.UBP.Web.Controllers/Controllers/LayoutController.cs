@@ -7,7 +7,7 @@ using TG.UBP.Web.Models.Layout;
 
 namespace TG.UBP.Web.Controllers
 {
-    public class LayoutController : ControllerBase
+    public class LayoutController : UbpControllerBase
     {
         private readonly IUserNavigationManager _userNavigationManager;
         private readonly ILanguageManager _languageManager;
@@ -43,6 +43,11 @@ namespace TG.UBP.Web.Controllers
                         };
 
             return PartialView("_LanguageSelection", model);
+        }
+
+        public ActionResult IconList()
+        {
+            return View();
         }
     }
 }

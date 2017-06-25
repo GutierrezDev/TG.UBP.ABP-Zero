@@ -113,6 +113,8 @@
   <ItemGroup>
     <Compile Include="BaseManage\MultiTenancy\ITenantAppService.cs" />
     <Compile Include="BaseManage\MultiTenancy\TenantAppService.cs" />
+    <Compile Include="BaseManage\Permission\Modules\IModuleAppService.cs" />
+    <Compile Include="BaseManage\Permission\Modules\ModuleAppService.cs" />
     <Compile Include="BaseManage\Permission\Roles\IRoleAppService.cs" />
     <Compile Include="BaseManage\Permission\Roles\RoleAppService.cs" />
     <Compile Include="BaseManage\Permission\Users\IUserAppService.cs" />
@@ -135,6 +137,10 @@
     <ProjectReference Include="..\..\..\..\module-zero\src\Abp.Zero\Abp.Zero.csproj">
       <Project>{6d8ad002-4071-4094-803a-c25eb7e9c786}</Project>
       <Name>Abp.Zero</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\01-基础设施层\TG.UBP.Core\TG.UBP.Core.csproj">
+      <Project>{4fe341bf-8422-4df3-8efa-dd5187032f70}</Project>
+      <Name>TG.UBP.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\02-领域层\TG.UBP.Domain.Core\TG.UBP.Domain.Core.csproj">
       <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>

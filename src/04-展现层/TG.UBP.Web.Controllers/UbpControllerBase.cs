@@ -9,9 +9,9 @@ namespace TG.UBP.Web.Controllers
     /// <summary>
     /// Derive all Controllers from this class.
     /// </summary>
-    public abstract class ControllerBase : AbpController
+    public abstract class UbpControllerBase : AbpController
     {
-        protected ControllerBase()
+        protected UbpControllerBase()
         {
             LocalizationSourceName = UbpConsts.LocalizationSourceName;
         }

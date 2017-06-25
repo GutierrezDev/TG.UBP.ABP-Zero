@@ -1,4 +1,5 @@
-﻿using Abp.EntityFramework;
+﻿using Abp.Domain.Uow;
+using Abp.EntityFramework;
 using Abp.Modules;
 using System.Reflection;
 using TG.UBP.Core;

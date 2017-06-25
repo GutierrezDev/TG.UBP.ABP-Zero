@@ -9,6 +9,8 @@ using TG.UBP.Core.Config;
 using Abp;
 using Castle.Facilities.Logging;
 using Abp.Dependency;
+using TG.UBP.Application.Dto.BaseManage.Permission.Modules;
+using TG.UBP.Application.Service.BaseManage.Permission.Modules;
 
 namespace TestConsoleApplication
 {
@@ -36,7 +38,7 @@ namespace TestConsoleApplication
                 //Getting a Tester object from DI and running it
                 using (var tester = bootstrapper.IocManager.ResolveAsDisposable<Tester>())
                 {
-                    tester.Object.Run();
+                    tester.Object.TestEntitiyMapToDto();
                 } //Disposes tester and all it's dependencies
 
                 Console.WriteLine("Press enter to exit...");
@@ -73,25 +75,25 @@ namespace TestConsoleApplication
 
         private static void Add(UbpDbContext context)
         {
-            var m = context.Modules.Add(new TG.UBP.Domain.Entity.Module() { EnCode = "test21", FullName = "test21" });
+            //var m = context.Modules.Add(new TG.UBP.Domain.Entity.Module() { EnCode = "test21", FullName = "test21" });
             //context.Modules.Add(new TG.UBP.Domain.Entity.Module() { EnCode = "test2", FullName = "test2" });
             //context.Modules.Add(new TG.UBP.Domain.Entity.Module() { EnCode = "test3", FullName = "test3" });
 
             //context.Users.Add(new TG.UBP.Domain.Entity.User() { EnCode = "test1", FullName = "test1" });
             //context.Users.Add(new TG.UBP.Domain.Entity.User() { EnCode = "test2", FullName = "test2" });
 
-            context.SaveChanges();
+            //context.SaveChanges();
         }
 
         private static void Query(UbpDbContext context)
         {
-            var datas = context.Modules;
+            //var datas = context.Modules;
 
-            Console.WriteLine("数据有：");
-            foreach (var data in datas)
-            {
-                Console.WriteLine("{0}", data.FullName);
-            }
+            //Console.WriteLine("数据有：");
+            //foreach (var data in datas)
+            //{
+            //    Console.WriteLine("{0}", data.FullName);
+            //}
         }
     }
 }

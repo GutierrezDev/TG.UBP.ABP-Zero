@@ -1,20 +1,22 @@
-﻿using System.Data.Common;
-using System.Linq;
-using Abp.EntityFramework;
+﻿using Abp.Zero.EntityFramework;
+using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using Abp.Zero.EntityFramework;
-
-using TG.UBP.Domain.Entity.BaseManage.Permission;
+using System.Linq;
 using TG.UBP.Domain.Entity.BaseManage.MultiTenancy;
+using TG.UBP.Domain.Entity.BaseManage.Permission;
 
 namespace TG.UBP.EF
 {
-    public class UbpDbContext : AbpZeroDbContext<Tenant, Role, User>
+    public partial class UbpDbContext : AbpZeroDbContext<Tenant, Role, User>
     {
         //TODO: Define an IDbSet for each Entity...
-        //public DbSet<TG.UBP.Domain.Entity.Module> Modules { get; set; }
-        //public DbSet<TG.UBP.Domain.Entity.User> Users { get; set; }
+        /// <summary>
+        /// 模块
+        /// </summary>
+        public virtual IDbSet<Module> Modules { get; set; }
+        public virtual IDbSet<ModuleOperate> ModuleOperates { get; set; }
+        public virtual IDbSet<ModuleColumnFilter> ColumnFilters { get; set; }
 
         //Example:
         //public virtual IDbSet<User> Users { get; set; }
@@ -70,6 +72,10 @@ namespace TG.UBP.EF
             {
                 mapper.RegistTo(modelBuilder.Configurations);
             }
+
+            //TODO：由于DevartOracle和DynamicFilters V1.4.10及以上版本不兼容，正在等待作者解决，所以这里暂时禁用DynamicFilters。
+            // disable all filters defined up to calling this method
+            //modelBuilder.PreventAllDisabledFilterConditions();
         }
     }
 }

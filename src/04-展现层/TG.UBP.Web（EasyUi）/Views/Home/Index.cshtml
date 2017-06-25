@@ -29,6 +29,10 @@
     <script src="~/signalr/hubs"></script>
     <link href="~/Content/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
 
+    <link href="/Content/bootstrap-cosmo.min.css" rel="stylesheet" />
+    <link href="/Content/flags/famfamfam-flags.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.min.js"></script>
+
 
 
     @if (menu.Contains("tree"))
@@ -152,6 +156,9 @@
                     }
                 </td>
 
+                <td style="width: 100px;">
+                    @Html.Action("LanguageSelection", "Layout")
+                </td>
                 <td style="width: 40px;">
                     <a title="等待开放..." class="l-btn-text fa fa-envelope-o  fa-lg bannerbtn" href="#"> </a>
                 </td>

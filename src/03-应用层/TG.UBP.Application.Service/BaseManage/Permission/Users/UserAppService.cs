@@ -6,11 +6,10 @@ using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Microsoft.AspNet.Identity;
 using TG.UBP.Domain.Core.BaseManage.Permission;
-using TG.UBP.Application.Service.BaseManage.Permission.Users;
 using TG.UBP.Domain.Entity.BaseManage.Permission;
 using TG.UBP.Application.Dto.BaseManage.Permission.Users;
 
-namespace TG.UBP.Application.Service.BaseManage.Permission
+namespace TG.UBP.Application.Service.BaseManage.Permission.Users
 {
     /* THIS IS JUST A SAMPLE. */
     [AbpAuthorize(PermissionNames.Pages_Users)]

@@ -20,6 +20,7 @@ namespace TG.UBP.Domain.SeedAction.SeedData
             new DefaultLanguagesCreator(_context).Create();
             new HostRoleAndUserCreator(_context).Create();
             new DefaultSettingsCreator(_context).Create();
+            new RootModuleCreator(_context).Create();
         }
     }
 }

@@ -4,6 +4,7 @@ using Abp.Web.SignalR;
 using System.Reflection;
 using TG.UBP.Application.Service;
 using TG.UBP.EF;
+using TG.UBP.WebApi;
 
 namespace TG.UBP.Web.Controllers
 {
@@ -12,7 +13,7 @@ namespace TG.UBP.Web.Controllers
        typeof(UbpEFModule),
        typeof(UbpApplicationServiceModule),
        typeof(AbpWebSignalRModule),
-       typeof(UBPWebApiModule))]
+       typeof(UbpWebApiModule))]
     public class UbpWebControllerModule : AbpModule
     {
         public override void Initialize()

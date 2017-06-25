@@ -5,10 +5,10 @@ using Abp.Modules;
 using Abp.WebApi;
 using TG.UBP.Application.Service;
 
-namespace TG.UBP
+namespace TG.UBP.WebApi
 {
     [DependsOn(typeof(AbpWebApiModule), typeof(UbpApplicationServiceModule))]
-    public class UBPWebApiModule : AbpModule
+    public class UbpWebApiModule : AbpModule
     {
         public override void Initialize()
         {

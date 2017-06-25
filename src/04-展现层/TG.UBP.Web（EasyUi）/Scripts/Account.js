@@ -67,7 +67,7 @@ function LoginSys() {
             }
             else
             {
-                window.location = "/"+$("#local").val()+"/Home/Index"
+                window.location = "/Home/Index"
             }
         } else {
             $("#mes").html(data.message);

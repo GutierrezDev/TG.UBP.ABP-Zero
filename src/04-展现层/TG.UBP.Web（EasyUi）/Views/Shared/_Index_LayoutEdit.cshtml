@@ -1,4 +1,6 @@
-﻿@{
+﻿@using System.Web.Optimization;
+
+@{
     //主题
     string themes = Session["themes"] == null ? "redlight" : Session["themes"].ToString();
     string info = System.Threading.Thread.CurrentThread.CurrentCulture.Name;

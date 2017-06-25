@@ -2,13 +2,25 @@
 using System.Globalization;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Linq;
+using TG.UBP.Application.Dto.BaseManage.Permission.Modules;
+using TG.UBP.Application.Service.BaseManage.Permission.Modules;
 using TG.UBP.Web.Models;
 
 namespace TG.UBP.Web.Controllers
 {
-    public class HomeController : ControllerBase
+    public class HomeController : UbpControllerBase
     {
+        private IModuleAppService _moduleAppService;
+
+        public HomeController(IModuleAppService moduleAppService)
+        {
+            _moduleAppService = moduleAppService;
+        }
+
+
         #region UI框架
         public ActionResult Index()
         {
@@ -41,7 +53,7 @@ namespace TG.UBP.Web.Controllers
         }
 
         //父ID=0的数据为顶级菜单
-        public ActionResult GetTopMenu()
+        public async Task<ActionResult> GetTopMenu()
         {
             //加入本地化
             //CultureInfo info = Thread.CurrentThread.CurrentCulture;
@@ -68,14 +80,25 @@ namespace TG.UBP.Web.Controllers
             //    return Json("0", JsonRequestBehavior.AllowGet);
             //}
 
-            List<SysModuleNavModel> list = new List<SysModuleNavModel>();
-            list.Add(new SysModuleNavModel() { id = "201605312304598866131890ede44b6", iconCls = "fa  fa-hand-pointer-o", attributes = "zh-CN/spl", text = "开发指南" });
-            list.Add(new SysModuleNavModel() { id = "20161124112512659817453d009fb84", iconCls = "fa fa-puzzle-piece", attributes = "zh-CN/", text = "信息系统" });
-            list.Add(new SysModuleNavModel() { id = "201407241558264790957ebaf9fec63", iconCls = "fa fa-sort-amount-asc", attributes = "zh-CN/flow", text = "工作流程" });
-            list.Add(new SysModuleNavModel() { id = "2016112411022140581745f0f582911", iconCls = "fa  fa-weixin", attributes = "fa  fa-weixin", text = "微信系统" });
-            list.Add(new SysModuleNavModel() { id = "SystemManage", iconCls = "fa fa-gears", attributes = "zh-CN/sys", text = "系统管理" });
-            list.Add(new SysModuleNavModel() { id = "20161124111315488817464f920b54f", iconCls = "fa  fa-shield", attributes = "zh-CN/", text = "权限系统" });
-            return Json(list, JsonRequestBehavior.AllowGet);
+            List<ModuleListDto> list = await _moduleAppService.GetModules(0);
+            var json = from r in list
+                       select new SysModuleNavModel()
+                       {
+                           id = r.Id.ToString(),
+                           text = r.ModuleName,     //text
+                           attributes = r.Url,
+                           iconCls = r.Icon
+                       };
+            return Json(json);
+
+            //List<SysModuleNavModel> list = new List<SysModuleNavModel>();
+            //list.Add(new SysModuleNavModel() { id = "201605312304598866131890ede44b6", iconCls = "fa  fa-hand-pointer-o", attributes = "zh-CN/spl", text = "开发指南" });
+            //list.Add(new SysModuleNavModel() { id = "20161124112512659817453d009fb84", iconCls = "fa fa-puzzle-piece", attributes = "zh-CN/", text = "信息系统" });
+            //list.Add(new SysModuleNavModel() { id = "201407241558264790957ebaf9fec63", iconCls = "fa fa-sort-amount-asc", attributes = "zh-CN/flow", text = "工作流程" });
+            //list.Add(new SysModuleNavModel() { id = "2016112411022140581745f0f582911", iconCls = "fa  fa-weixin", attributes = "fa  fa-weixin", text = "微信系统" });
+            //list.Add(new SysModuleNavModel() { id = "SystemManage", iconCls = "fa fa-gears", attributes = "zh-CN/sys", text = "系统管理" });
+            //list.Add(new SysModuleNavModel() { id = "20161124111315488817464f920b54f", iconCls = "fa  fa-shield", attributes = "zh-CN/", text = "权限系统" });
+            //return Json(list, JsonRequestBehavior.AllowGet);
         }
 
 
@@ -85,7 +108,7 @@ namespace TG.UBP.Web.Controllers
         /// </summary>
         /// <param name="id">所属</param>
         /// <returns>树</returns>
-        public ActionResult GetTreeByEasyui(string id)
+        public async Task<ActionResult> GetTreeByEasyui(string id)
         {
             //加入本地化
             //CultureInfo info = Thread.CurrentThread.CurrentCulture;
@@ -114,10 +137,22 @@ namespace TG.UBP.Web.Controllers
             //    return Json("0", JsonRequestBehavior.AllowGet);
             //}
 
-            List<SysModuleNavModel> list = new List<SysModuleNavModel>();
-            list.Add(new SysModuleNavModel() { id = "201611241127104938174ca14069a09", iconCls = "fa  fa-puzzle-piece", attributes = "zh-CN/", text = "简单样例", state = "closed" });
-            list.Add(new SysModuleNavModel() { id = "201611241128515238174870b8252a2", iconCls = "fa  fa-paste", attributes = "zh-CN/", text = "复杂样例", state = "closed" });
-            return Json(list, JsonRequestBehavior.AllowGet);
+            List<ModuleListDto> list = await _moduleAppService.GetModules(int.Parse(id));
+            var json = from r in list
+                       select new SysModuleNavModel()
+                       {
+                           id = r.Id.ToString(),
+                           text = r.ModuleName,     //text
+                           attributes = r.Url,
+                           iconCls = r.Icon,
+                           state = (_moduleAppService.GetModules(r.Id).Result.Count > 0) ? "closed" : "open"
+                       };
+            return Json(json);
+
+            //List<SysModuleNavModel> list = new List<SysModuleNavModel>();
+            //list.Add(new SysModuleNavModel() { id = "201611241127104938174ca14069a09", iconCls = "fa  fa-puzzle-piece", attributes = "zh-CN/", text = "简单样例", state = "closed" });
+            //list.Add(new SysModuleNavModel() { id = "201611241128515238174870b8252a2", iconCls = "fa  fa-paste", attributes = "zh-CN/", text = "复杂样例", state = "closed" });
+            //return Json(list, JsonRequestBehavior.AllowGet);
         }
 
 

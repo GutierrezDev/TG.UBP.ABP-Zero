@@ -8,10 +8,12 @@ using Abp.Zero.Configuration;
 using TG.UBP.Domain.Entity.BaseManage.Permission;
 using TG.UBP.Domain.Core.BaseManage.Permission;
 using TG.UBP.Domain.Entity.BaseManage.MultiTenancy;
+using TG.UBP.Domain.Entity;
 
 namespace TG.UBP.Domain.Core
 {
-    [DependsOn(typeof(AbpZeroCoreModule))]
+    [DependsOn(typeof(AbpZeroCoreModule),
+        typeof(UbpDomainEntityModule))]
     public class UbpDomainCoreModule : AbpModule
     {
         public override void PreInitialize()
@@ -32,7 +34,7 @@ namespace TG.UBP.Domain.Core
                     UbpConsts.LocalizationSourceName,
                     new XmlEmbeddedFileLocalizationDictionaryProvider(
                         Assembly.GetExecutingAssembly(),
-                        "TG.UBP.Localization.Source"
+                        "TG.UBP.Domain.Core.Localization.Source"
                         )
                     )
                 );

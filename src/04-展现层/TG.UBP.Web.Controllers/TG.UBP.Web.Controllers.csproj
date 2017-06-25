@@ -34,6 +34,7 @@
       <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -62,8 +63,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\BaseManage\ModuleController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Models\Account\LanguagesViewModel.cs" />
+    <Compile Include="Models\Account\LoginFormViewModel.cs" />
+    <Compile Include="UbpControllerBase.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Models\AccountModel.cs" />
@@ -74,6 +78,7 @@
     <Compile Include="UbpWebControllerModule.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +114,10 @@
       <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
       <Name>TG.UBP.Domain.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\03-应用层\TG.UBP.Application.Dto\TG.UBP.Application.Dto.csproj">
+      <Project>{0e684037-fae4-4f67-9c4c-b68dbb215d8d}</Project>
+      <Name>TG.UBP.Application.Dto</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\03-应用层\TG.UBP.Application.Service\TG.UBP.Application.Service.csproj">
       <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
       <Name>TG.UBP.Application.Service</Name>
@@ -122,5 +131,6 @@
       <Name>TG.UBP.WebApi</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
