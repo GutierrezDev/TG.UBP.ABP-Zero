@@ -14,13 +14,13 @@ namespace TG.UBP.Domain.Core.BaseManage.Permission.Modules
     {
         private readonly IUnitOfWorkManager _unitOfWorkManager;
 
-        private readonly IRepository<Module, int> _moduleRepository;
+        private readonly IRepository<Module, long> _moduleRepository;
         private readonly IRepository<ModuleOperate, int> _moduleOperateRepository;
         private readonly IRepository<ModuleColumnFilter, int> _columnFilterRepository;
 
         public ModuleManager(
             IUnitOfWorkManager unitOfWorkManager, 
-            IRepository<Module, int> moduleRepository,
+            IRepository<Module, long> moduleRepository,
             IRepository<ModuleOperate, int> moduleOperateRepository,
             IRepository<ModuleColumnFilter, int> columnFilterRepository
             )
@@ -32,13 +32,13 @@ namespace TG.UBP.Domain.Core.BaseManage.Permission.Modules
         }
 
         #region 模块
-        public async Task<List<Module>> GetModules(int parentId)
+        public async Task<List<Module>> GetModules(long parentId)
         {
             var modules = _moduleRepository.GetAll().Where(p => p.ParentId == parentId).OrderBy(p => p.Sort);
             return await modules.ToListAsync();
         }
 
-        public Module GetModuleById(int id)
+        public Module GetModuleById(long id)
         {
             return _moduleRepository.Get(id);
         }

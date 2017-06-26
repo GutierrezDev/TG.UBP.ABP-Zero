@@ -21,12 +21,12 @@ namespace TestConsoleApplication
     {
         public ILogger Logger { get; set; }
 
-        private readonly IRepository<Module, int> _moduleRepository;
+        private readonly IRepository<Module, long> _moduleRepository;
         private readonly IRepository<User, long> _userRepository;
         private readonly IUnitOfWorkManager _unitOfWorkManager;
         private IModuleAppService _moduleAppService;
 
-        public Tester(IRepository<Module, int> moduleRepository
+        public Tester(IRepository<Module, long> moduleRepository
             , IRepository<User, long> userRepository
             , IUnitOfWorkManager unitOfWorkManager
             , IModuleAppService moduleAppService

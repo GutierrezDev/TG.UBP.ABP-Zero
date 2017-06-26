@@ -8,7 +8,7 @@ using TG.UBP.EF;
 
 namespace TG.UBP.Domain.EntityConfiguration.OracleDevart.BaseManage.Permission
 {
-    public class ModuleConfiguration : EntityConfigurationBase<Module, int>
+    public class ModuleConfiguration : EntityConfigurationBase<Module, long>
     {
         public ModuleConfiguration()
         {

@@ -9,9 +9,9 @@ namespace TG.UBP.Domain.Core.BaseManage.Permission.Modules
     public interface IModuleManagercs : IDomainService
     {
         #region 模块
-        Task<List<Module>> GetModules(int parentId);
+        Task<List<Module>> GetModules(long parentId);
 
-        Module GetModuleById(int id);
+        Module GetModuleById(long id);
 
         Task<bool> CreateModuleAsync(Module module);
 
