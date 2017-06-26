@@ -11,7 +11,7 @@ namespace TG.UBP.Application.Dto.BaseManage.Permission.Modules
     {
         //[NotNullExpression]
         [Display(Name = "ID")]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         [Display(Name = "…œº∂ID")]

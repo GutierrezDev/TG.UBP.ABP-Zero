@@ -228,24 +228,24 @@ namespace TG.UBP.Web.Controllers
         #endregion
 
         #region js配置
-        public JavaScriptResult ConfigJs()
-        {
-            CultureInfo info = Thread.CurrentThread.CurrentCulture;
-            StringBuilder sb = new StringBuilder();
-            sb.Append("var _YMGlobal;");
-            sb.Append("(function(_YMGlobal) {");
-            sb.Append("    var Config = (function() {");
-            sb.Append("        function Config() {}");
-            sb.AppendFormat("  Config.currentCulture = '{0}';", info.Name);
-            sb.AppendFormat("  Config.apiUrl = '{0}';", "");
-            sb.AppendFormat("  Config.token = '{0}';", "");
-            sb.Append("       return Config;");
-            sb.Append("   })();");
-            sb.Append("   _YMGlobal.Config = Config;");
-            sb.Append(" })(_YMGlobal || (_YMGlobal = { }));");
+        //public JavaScriptResult ConfigJs()
+        //{
+        //    CultureInfo info = Thread.CurrentThread.CurrentCulture;
+        //    StringBuilder sb = new StringBuilder();
+        //    sb.Append("var _YMGlobal;");
+        //    sb.Append("(function(_YMGlobal) {");
+        //    sb.Append("    var Config = (function() {");
+        //    sb.Append("        function Config() {}");
+        //    sb.AppendFormat("  Config.currentCulture = '{0}';", info.Name);
+        //    sb.AppendFormat("  Config.apiUrl = '{0}';", "");
+        //    sb.AppendFormat("  Config.token = '{0}';", "");
+        //    sb.Append("       return Config;");
+        //    sb.Append("   })();");
+        //    sb.Append("   _YMGlobal.Config = Config;");
+        //    sb.Append(" })(_YMGlobal || (_YMGlobal = { }));");
 
-            return JavaScript(sb.ToString());
-        }
+        //    return JavaScript(sb.ToString());
+        //}
         #endregion
 
         public ActionResult Desktop()

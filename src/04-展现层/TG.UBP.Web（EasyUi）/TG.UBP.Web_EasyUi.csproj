@@ -757,7 +757,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\easyui\datagrid-filter.js" />
-    <Content Include="Scripts\easyui\easyui-lang-en-US.js" />
+    <Content Include="Scripts\easyui\easyui-lang-en.js" />
     <Content Include="Scripts\easyui\easyui-lang-zh-CN.js" />
     <Content Include="Scripts\easyui\filter.png" />
     <Content Include="Scripts\easyui\jquery.easyui.min.js" />
@@ -1054,6 +1054,7 @@
     <Content Include="Scripts\fancybox\jquery.fancybox-1.3.4.js" />
     <Content Include="Scripts\fancybox\jquery.fancybox.min.js" />
     <Content Include="Scripts\fancybox\jquery.mousewheel-3.0.4.pack.js" />
+    <Content Include="Scripts\home_Ymnets.js" />
     <Content Include="Scripts\home.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />

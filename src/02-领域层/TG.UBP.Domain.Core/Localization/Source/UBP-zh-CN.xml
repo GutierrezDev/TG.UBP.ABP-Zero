@@ -282,6 +282,9 @@
         <text name="ThisLanguageAlreadyExists" value="这种语言已经存在!" />
         
         <!-- 自己增加的 -->
+        <text name="InputUser" value="请输入用户名" />
+        <text name="InputPassword" value="请输入密码" />
+
         <text name="Create" value="创建" />
         <text name="Query" value="查询" />
         <text name="Reply" value="返回" />

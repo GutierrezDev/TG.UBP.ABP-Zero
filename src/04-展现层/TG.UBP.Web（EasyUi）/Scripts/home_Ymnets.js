@@ -123,7 +123,7 @@
 function loadAccordionMenu(parentId) {
     $(".bannerMenu").removeClass("selected");
     $("#" + parentId).addClass("selected");
-    $.post("/Home/GetTreeByEasyui", {
+    $.post("/" + _YMGlobal.Config.currentCulture + "/Home/GetTreeByEasyui", {
         "id": parentId
     }, //获取第一层目录
 
@@ -150,11 +150,11 @@ function loadAccordionMenu(parentId) {
 	        });
 
 
-	        $.post("/Home/GetTreeByEasyui?id=" + id, function (data) { //循环创建树的项
+	        $.post("/" + _YMGlobal.Config.currentCulture + "/Home/GetTreeByEasyui?id=" + id, function (data) { //循环创建树的项
 	            $("#tree" + id).tree({
                     data: data.result,
 	                onBeforeExpand: function (node, param) {
-	                    $("#tree" + id).tree('options').url = "/Home/GetTreeByEasyui?id=" + node.id;
+	                    $("#tree" + id).tree('options').url = "/" + _YMGlobal.Config.currentCulture + "/Home/GetTreeByEasyui?id=" + node.id;
 	                },
 	                onClick: function (node) {
 	                    if (node.state == 'closed') {
@@ -182,7 +182,7 @@ function loadAccordionMenu(parentId) {
 function loadTreeMenu(parentId) {
     $(".bannerMenu").removeClass("selected");
     $("#" + parentId).addClass("selected");
-    $.post("/Home/GetTreeByEasyui", {
+    $.post("/" + _YMGlobal.Config.currentCulture + "/Home/GetTreeByEasyui", {
         "id": parentId
     }, //获取第一层目录
 
@@ -191,7 +191,7 @@ function loadTreeMenu(parentId) {
 	    $("#RightTree").tree({
             data: data.result,
 	        onBeforeExpand: function (node, param) {
-	            $("#RightTree").tree('options').url = "../../Home/GetTreeByEasyui?id=" + node.id;
+	            $("#RightTree").tree('options').url = "../../" + _YMGlobal.Config.currentCulture + "/Home/GetTreeByEasyui?id=" + node.id;
 	        },
 	        onClick: function (node) {
 	            if (node.state == 'closed') {
@@ -216,7 +216,7 @@ function initTabs() {
 }
 
 function Profile() {
-    addTab(index_lang_info, "../../Home/Info", "fa fa-credit-card");
+    addTab(index_lang_info, "../../" + _YMGlobal.Config.currentCulture + "/Home/Info", "fa fa-credit-card");
 }
 
 function SignOut() {

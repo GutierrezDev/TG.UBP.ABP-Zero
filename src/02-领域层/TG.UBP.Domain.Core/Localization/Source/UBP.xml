@@ -487,5 +487,25 @@
         <text name="MaximumUserCount_Error_Message">Reached to maximum allowed user count!</text>
         <text name="MaximumUserCount_Error_Detail">This tenant is allowed to have a maximum of {0} users.</text>
         <text name="UnlockedTenandAdmin">Unlocked admin user for {0}</text>
+
+        <!-- 自己增加的 -->
+        <text name="InputUser" value="Input UserID" />
+        <text name="InputPassword" value="Input Password" />
+
+        <text name="Create" value="Create" />
+        <text name="Query" value="Query" />
+        <text name="Reply" value="Reply" />
+
+        <text name="PlaseChooseToOperatingRecords" value="PlaseChooseToOperatingRecords" />
+        <text name="YouWantToDeleteTheSelectedRecords" value="YouWantToDeleteTheSelectedRecords？" />
+
+        <text name="TitleName" value="Name" />
+        <text name="TitleRemark" value="Remark" />
+        <text name="TitleState" value="State" />
+        <text name="TitleCreateUser" value="CreateUser" />
+        <text name="TitleCreateTime" value="CreateTime" />
+        <text name="TitleSort" value="Sort" />
+        <text name="Tip" value="Tip" />
+        <text name="TitleCategory" value="Category" />
     </texts>
 </localizationDictionary>

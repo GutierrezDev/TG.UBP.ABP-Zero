@@ -1,13 +1,10 @@
-﻿using Abp.Application.Services.Dto;
-using Abp.AutoMapper;
-using Abp.Domain.Repositories;
+﻿using Abp.Domain.Repositories;
 using Abp.Domain.Services;
 using Abp.Domain.Uow;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using TG.UBP.Application.Dto.BaseManage.Permission.Modules;
 using TG.UBP.Core.LinqHelper;
 using TG.UBP.Domain.Entity.BaseManage.Permission;
 

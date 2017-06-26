@@ -5,6 +5,12 @@ using Microsoft.AspNet.Identity;
 
 namespace TG.UBP.Domain.Entity.BaseManage.Permission
 {
+    /// <summary>
+    /// 用户。
+    ///     UserLogin—用户第三方登录（OAuth，如facebook,google）信息
+    ///     UserClaim—用户摘要标识信息
+    ///     UserRole—用户角色映射信息
+    /// </summary>
     public class User : AbpUser<User>
     {
         public const string DefaultPassword = "123qwe";
@@ -26,5 +32,9 @@ namespace TG.UBP.Domain.Entity.BaseManage.Permission
                 Password = new PasswordHasher().HashPassword(password)
             };
         }
+
+        #region 重载属性
+        //public override string Surname { get; set; }
+        #endregion
     }
 }

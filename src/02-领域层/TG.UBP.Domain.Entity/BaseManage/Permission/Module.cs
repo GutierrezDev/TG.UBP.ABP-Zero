@@ -1,4 +1,5 @@
-﻿using Abp.Domain.Entities.Auditing;
+﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,14 +10,16 @@ using System.Threading.Tasks;
 
 namespace TG.UBP.Domain.Entity.BaseManage.Permission
 {
-    public class Module : FullAuditedEntity
+    public class Module : FullAuditedEntity<long>, IMayHaveTenant
     {
+        public virtual int? TenantId { get; set; }
+
         /// <summary>
         /// 父级主键
         /// 如果为Null，则表示根模块
         /// </summary>
         [Display(Name = "上级ID")]
-        public int? ParentId { set; get; }
+        public long ParentId { set; get; }
         /// <summary>
         /// 编码
         /// </summary>

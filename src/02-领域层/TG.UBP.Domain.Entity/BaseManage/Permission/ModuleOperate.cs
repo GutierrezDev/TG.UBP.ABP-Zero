@@ -14,7 +14,7 @@ namespace TG.UBP.Domain.Entity.BaseManage.Permission
         public string OperateName { get; set; }
 
         [Display(Name = "所属模块")]
-        public int ModuleId { get; set; }
+        public long ModuleId { get; set; }
 
         [Display(Name = "是否验证")]
         public bool IsValid { get; set; }

@@ -24,7 +24,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/common")
     @Scripts.Render("~/bundles/home")
-    @Scripts.Render("~/" + info + "/Home/ConfigJs")
+    @*@Scripts.Render("~/" + info + "/Home/ConfigJs")*@
     <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
     <script src="~/signalr/hubs"></script>
     <link href="~/Content/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -40,7 +40,7 @@
         <script>
             $(function () {
 
-                $.post("../../@info/Home/GetTopMenu", //获取顶级菜单
+                $.post("../../Home/GetTopMenu", //获取顶级菜单
                             function (data) {
                                 //开启顶部菜单模式
                                var flag =@(menu.Contains("topmenu").ToString().ToLower());
@@ -72,7 +72,7 @@
                     border:false,
                     animate:false
                 });
-                $.post("../../@info/Home/GetTopMenu", //获取顶级菜单
+                $.post("../../Home/GetTopMenu", //获取顶级菜单
                                function (data) {
                                    //开启顶部菜单模式
                                    var flag =@(menu.Contains("topmenu").ToString().ToLower());

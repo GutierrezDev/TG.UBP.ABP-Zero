@@ -48,6 +48,7 @@ namespace TG.UBP.Application.Service.BaseManage.Permission.Modules
         {
             Module newModule = new Module()
             {
+                TenantId = AbpSession.TenantId,
                 ModuleCode = input.ModuleCode,
                 ModuleName = input.ModuleName,
                 ParentId = input.ParentId,
