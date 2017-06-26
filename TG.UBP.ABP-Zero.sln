@@ -29,6 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EC43B0E2-4A6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{688730C4-F810-4A36-9EA1-99F344CF2137}"
 	ProjectSection(SolutionItems) = preProject
+		src\03-应用层\README.md = src\03-应用层\README.md
 		doc\TG.UBP开发建议.pptx = doc\TG.UBP开发建议.pptx
 		doc\开发说明.docx = doc\开发说明.docx
 		doc\系统管理－详细设计.docx = doc\系统管理－详细设计.docx
